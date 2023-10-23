@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root{
+
+  --ff-base:'Bebas Neue', sans-serif;
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background: url(assets/radiant-gradient.svg) center no-repeat;
+  background-size: cover;
+  font-family: var(--ff-base);
+}
+#app{
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#searchBox::placeholder{
+  letter-spacing: .25rem;
+  opacity: .75;
+}
+#searchBox:focus{
+  border: 3px solid wheat;
+  border-style:dashed ;
+  background: transparent;
+  color: #fefefe;
+}
+#searchBox:focus::placeholder{
+  visibility: hidden;
+}
+#weatherImage{
+  animation: pulseY 3s infinite;
+}
+#humidity{
+  animation: pulseX 3s infinite;
+}
+#wind{
+  animation: pulseX 3s infinite;
+}
+@keyframes pulseY{
+  0%{ 
+    transform: translateY(1px);
+  }
+  80%{
+    transform: translateY(10px);
+  }
+  100%{
+    transform: translateY(1px);
+  }
+}
+@keyframes pulseX{
+  0%{ 
+    transform: translateX(1px);
+  }
+  70%{
+    transform: translateX(6px);
+  }
+  100%{
+    transform: translateX(2px);
+  }
+}
